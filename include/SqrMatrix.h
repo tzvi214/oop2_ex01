@@ -13,9 +13,11 @@ using std::endl;
 class SqrMatrix
 {
 public:
-	SqrMatrix(int);
+	SqrMatrix(int =0);
 	friend ostream& operator<< (ostream&, const SqrMatrix&);
 	friend istream& operator>> (istream&, SqrMatrix&);
+	SqrMatrix operator+(const SqrMatrix&) const;
+	SqrMatrix& operator=(const SqrMatrix&);
 
 private:
 	int m_size;
