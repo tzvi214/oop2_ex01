@@ -1,3 +1,4 @@
+#pragma once
 #include "operation.h"
 
 class Id :public Operation
