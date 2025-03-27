@@ -1,6 +1,7 @@
 #pragma once
 #include "operation.h"
 #include "SqrMatrix.h"
+#include <string>
 //#include <iostream>
 
 using std::cout;

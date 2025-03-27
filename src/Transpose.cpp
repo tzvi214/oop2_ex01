@@ -7,6 +7,7 @@ Transpose::Transpose()
 //----------------------------------------------------
 SqrMatrix Transpose::calc(int size)
 {
+	Operation::printName();
 	cout << "Enter a " << size << " x" << size << " matrix:" << endl;
 	SqrMatrix matrix(size);
 
