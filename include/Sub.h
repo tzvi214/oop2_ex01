@@ -8,15 +8,15 @@
 using std::cout;
 using std::endl;
 
-class Add : public Operation
+class Sub : public Operation
 {
 public:
-	Add(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
+	Sub(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
 	virtual SqrMatrix calc(int);
-
 private:
 	std::shared_ptr<Operation> m_ptr1;
 	std::shared_ptr<Operation> m_ptr2;
 	std::string createName(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
 };
+
 

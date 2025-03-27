@@ -1,11 +1,16 @@
 #pragma once
+#include <iostream>
 #include "operation.h"
+#include "SqrMatrix.h"
 
-//class Id :public Operation
-//{
-//public:
-//	Id() = default;
-//	~Id() = default;
-//	virtual SqrMatrix calc(const SqrMatrix);
-//	virtual void print() const;
-//};
+
+using std::cout;
+using std::endl;
+class Id :public Operation
+{
+public:
+	Id() ;
+	~Id() = default;
+	virtual SqrMatrix calc(int);
+	virtual SqrMatrix calcFromMatrix(SqrMatrix);
+};

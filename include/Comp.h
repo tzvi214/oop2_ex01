@@ -8,10 +8,10 @@
 using std::cout;
 using std::endl;
 
-class Add : public Operation
+class Comp : public Operation
 {
 public:
-	Add(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
+	Comp(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
 	virtual SqrMatrix calc(int);
 
 private:

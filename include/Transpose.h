@@ -2,7 +2,6 @@
 #include "operation.h"
 #include <string>
 #include "SqrMatrix.h"
-//#include <iostream>
 
 using std::cout;
 using std::endl;
@@ -12,6 +11,7 @@ public:
 	Transpose();
 	 ~Transpose() = default; // Make destructor virtual
 	virtual SqrMatrix calc(int);
+	virtual SqrMatrix calcFromMatrix(SqrMatrix);
 private:
 	
 };

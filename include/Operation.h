@@ -10,6 +10,7 @@ public:
 	 Operation(string, int);
 	virtual ~Operation() = default;
 	virtual SqrMatrix calc(int) { return SqrMatrix{}; }; 
+	virtual SqrMatrix calcFromMatrix(SqrMatrix) { return SqrMatrix{}; };
 	virtual int getMatrixRequired() const { return m_matrixRequired; }; // return the number of matrix required for the operation (virtual).
 
 	virtual void printName() const {

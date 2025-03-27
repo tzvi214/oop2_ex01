@@ -24,6 +24,18 @@ SqrMatrix& SqrMatrix::operator=(const SqrMatrix& other)
 		m_matrix = other.m_matrix;
 	}
 	return *this;
+}
+//----------------------------------------------------
+SqrMatrix& SqrMatrix::operator-(const SqrMatrix& other)
+{
+	for (int i = 0; i < m_size; i++)
+	{
+		for (int j = 0; j < m_size; j++)
+		{
+			m_matrix[i][j] -= other.m_matrix[i][j];
+		}
+	}
+	return *this;
 	
 }
 //----------------------------------------------------

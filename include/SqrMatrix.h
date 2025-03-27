@@ -17,6 +17,7 @@ public:
 	friend ostream& operator<< (ostream&, const SqrMatrix&);
 	friend istream& operator>> (istream&, SqrMatrix&);
 	SqrMatrix operator+(const SqrMatrix&) const;
+	SqrMatrix& operator-(const SqrMatrix&);
 	SqrMatrix& operator=(const SqrMatrix&);
 	SqrMatrix& scalar(int);
     SqrMatrix& transpose();

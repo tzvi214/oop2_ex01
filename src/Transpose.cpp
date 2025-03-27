@@ -8,9 +8,14 @@ Transpose::Transpose()
 SqrMatrix Transpose::calc(int size)
 {
 	Operation::printName();
-	cout << "Enter a " << size << " x" << size << " matrix:" << endl;
+	cout << "Enter a " << size << " x " << size << "matrix:" << endl;
 	SqrMatrix matrix(size);
 
 	cin >> matrix;
 	return matrix.transpose();
+}
+//----------------------------------------------------
+SqrMatrix Transpose::calcFromMatrix(SqrMatrix matrix)
+{
+	return matrix.transpose() ;
 }
