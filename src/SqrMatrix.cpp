@@ -29,28 +29,26 @@ SqrMatrix& SqrMatrix::operator=(const SqrMatrix& other)
 //----------------------------------------------------
 SqrMatrix& SqrMatrix::scalar(int scale)
 {
-	SqrMatrix result(m_size);
 	for (int i = 0; i < m_size; i++)
 	{
 		for (int j = 0; j < m_size; j++)
 		{
-			result.m_matrix[i][j] = m_matrix[i][j] * scale;
+			m_matrix[i][j] *= scale; // שינוי ישירות באובייקט הנוכחי
 		}
 	}
-	return result;
+	return *this; // החזרת הפניה לעצם הנוכחי
 }
 //----------------------------------------------------
 SqrMatrix& SqrMatrix::transpose()
 {
-	SqrMatrix result(m_size);
 	for (int i = 0; i < m_size; i++)
 	{
-		for (int j = 0; j < m_size; j++) // && j < i
+		for (int j = i + 1; j < m_size; j++)
 		{
-			result.m_matrix[i][j] = m_matrix[j][i];
+			std::swap(m_matrix[i][j], m_matrix[j][i]);
 		}
 	}
-	return result;
+	return *this;
 }
 //----------------------------------------------------
 ostream& operator<<(ostream& os, const SqrMatrix& matrix)

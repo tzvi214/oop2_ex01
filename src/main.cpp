@@ -1,15 +1,18 @@
-#include <iostream>
-#include "Scal.h"
 #include "SqrMatrix.h"
+#include <iostream>
 
 int main() {
-    int size = 2;
-    int scalarValue = 3;
+    int size = 3;
+    SqrMatrix mat(size);
 
-    Scal scalOp(scalarValue);
-    SqrMatrix result = scalOp.calc(size);
+    std::cout << "Enter a " << size << " x " << size << " matrix:" << std::endl;
+    std::cin >> mat;
 
-    std::cout << "Scaled matrix:" << std::endl << result << std::endl;
+    std::cout << "Original matrix:" << std::endl << mat << std::endl;
+
+    mat.transpose();
+
+    std::cout << "Transposed matrix:" << std::endl << mat << std::endl;
 
     return 0;
 }
