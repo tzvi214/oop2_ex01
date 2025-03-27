@@ -1,13 +1,8 @@
-#include "Comp.h"
-#include "Transpose.h"
-#include "Scal.h"
-#include "SqrMatrix.h"
-#include <iostream>
-#include <memory>
-using std::cout;
-using std::endl;
+#include "Manager.h"
 
 int main() {
-   
+	Manager manager;
+	manager.run();
+    
     return 0;
 }
