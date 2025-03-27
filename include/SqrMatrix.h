@@ -18,7 +18,8 @@ public:
 	friend istream& operator>> (istream&, SqrMatrix&);
 	SqrMatrix operator+(const SqrMatrix&) const;
 	SqrMatrix& operator=(const SqrMatrix&);
-
+	SqrMatrix& scalar(int);
+    SqrMatrix& transpose();
 private:
 	int m_size;
 	vector < vector <MyType>> m_matrix;

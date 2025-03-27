@@ -1,8 +1,7 @@
 #include "SqrMatrix.h"
 
 SqrMatrix::SqrMatrix(int size) : m_size(size), m_matrix(size, vector<MyType>(size, 0)) //Initialize the matrix to the value 0
-{
-}
+{}
 //----------------------------------------------------
 SqrMatrix SqrMatrix::operator+(const SqrMatrix& other) const
 {
@@ -16,7 +15,7 @@ SqrMatrix SqrMatrix::operator+(const SqrMatrix& other) const
 	}
 	return result;
 }
-
+//----------------------------------------------------
 SqrMatrix& SqrMatrix::operator=(const SqrMatrix& other)
 {
 	if (this != &other)
@@ -27,7 +26,33 @@ SqrMatrix& SqrMatrix::operator=(const SqrMatrix& other)
 	return *this;
 	
 }
-
+//----------------------------------------------------
+SqrMatrix& SqrMatrix::scalar(int scale)
+{
+	SqrMatrix result(m_size);
+	for (int i = 0; i < m_size; i++)
+	{
+		for (int j = 0; j < m_size; j++)
+		{
+			result.m_matrix[i][j] = m_matrix[i][j] * scale;
+		}
+	}
+	return result;
+}
+//----------------------------------------------------
+SqrMatrix& SqrMatrix::transpose()
+{
+	SqrMatrix result(m_size);
+	for (int i = 0; i < m_size; i++)
+	{
+		for (int j = 0; j < m_size; j++) // && j < i
+		{
+			result.m_matrix[i][j] = m_matrix[j][i];
+		}
+	}
+	return result;
+}
+//----------------------------------------------------
 ostream& operator<<(ostream& os, const SqrMatrix& matrix)
 {
 	for (int i = 0; i < matrix.m_size; i++)
@@ -41,7 +66,7 @@ ostream& operator<<(ostream& os, const SqrMatrix& matrix)
 
 	return os;
 }
-
+//----------------------------------------------------
 istream& operator>>(istream& is, SqrMatrix& matrix)
 {
 	for (int i = 0; i < matrix.m_size; i++)
