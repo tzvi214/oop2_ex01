@@ -17,8 +17,16 @@ SqrMatrix Add::calc(int sizeOfTheMatrixes)
 
 	return m_ptr1->calc(sizeOfTheMatrixes) + m_ptr2->calc(sizeOfTheMatrixes);
 }
+//-------------------------------------------
+SqrMatrix Add::calc(std::vector<SqrMatrix> op)
+{
+	
+	int splitIndex = m_ptr1->getMatrixRequired();
+	std::vector<SqrMatrix> a(op.begin(), op.begin() + splitIndex);
+	std::vector<SqrMatrix> b(op.begin() + splitIndex, op.end());
 
-
+	return m_ptr1->calc(a) + m_ptr2->calc(b);
+}
 //-------------------------------------------
 std::string Add::createName(std::shared_ptr<Operation> aptr, std::shared_ptr<Operation> bptr)
 {

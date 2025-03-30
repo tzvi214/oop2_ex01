@@ -13,6 +13,10 @@ SqrMatrix Id::calc(int size)
 	cin >> matrix;
 	return matrix;
 }
+SqrMatrix Id::calc(std::vector<SqrMatrix> op)
+{
+	return op.at(0) ;
+}
 //----------------------------------------------------
 SqrMatrix Id::calcFromMatrix(SqrMatrix matrix)
 {

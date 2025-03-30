@@ -14,6 +14,10 @@ SqrMatrix Transpose::calc(int size)
 	cin >> matrix;
 	return matrix.transpose();
 }
+SqrMatrix Transpose::calc(std::vector<SqrMatrix> op)
+{
+	return op.at(0).transpose();
+}
 //----------------------------------------------------
 SqrMatrix Transpose::calcFromMatrix(SqrMatrix matrix)
 {

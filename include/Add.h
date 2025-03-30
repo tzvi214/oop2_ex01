@@ -13,6 +13,7 @@ class Add : public Operation
 public:
 	Add(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
 	virtual SqrMatrix calc(int);
+	virtual SqrMatrix calc(std::vector<SqrMatrix>);
 
 private:
 	std::shared_ptr<Operation> m_ptr1;

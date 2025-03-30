@@ -2,7 +2,7 @@
 
 
 Comp::Comp(std::shared_ptr<Operation> aptr, std::shared_ptr<Operation> bptr)
-	:Operation(createName(aptr, bptr), (aptr->getMatrixRequired() /*+ bptr->getMatrixRequired()*/)),
+	:Operation(createName(aptr, bptr), (aptr->getMatrixRequired()  + bptr->getMatrixRequired() -1)),
 	m_ptr1{ aptr }, m_ptr2{ bptr }
 {
 	m_ptr1->dountPrintName();
@@ -18,8 +18,17 @@ SqrMatrix Comp::calc(int sizeOfTheMatrixes)
 
 	return m_ptr2->calcFromMatrix(m_ptr1->calc(sizeOfTheMatrixes)) ;
 }
-
-
+//-------------------------------------------
+SqrMatrix Comp::calc(std::vector<SqrMatrix> op)
+{
+	int splitIndex = m_ptr1->getMatrixRequired();
+	std::vector<SqrMatrix> a(op.begin(), op.begin() + splitIndex);
+	std::vector<SqrMatrix> b(op.begin() + splitIndex, op.end());
+	auto temp = m_ptr1->calc(a);
+	b.insert(b.begin(), temp);
+	return m_ptr2->calc(b);
+	
+}
 //-------------------------------------------
 std::string Comp::createName(std::shared_ptr<Operation> aptr, std::shared_ptr<Operation> bptr)
 {

@@ -4,5 +4,5 @@ int main() {
 	Manager manager;
 	manager.run();
     
-    return 0;
+    return EXIT_SUCCESS;
 }

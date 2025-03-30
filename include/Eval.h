@@ -3,6 +3,7 @@
 #include "SqrMatrix.h"
 #include <iostream>
 #include <memory>
+#include <vector>
 
 using std::cout;
 using std::endl;

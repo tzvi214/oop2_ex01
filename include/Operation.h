@@ -1,6 +1,7 @@
 #pragma once
 #include "SqrMatrix.h"
 #include <string>
+#include <vector>
 using std::string;
 using std::cout;
 using std::endl;
@@ -10,6 +11,7 @@ public:
 	 Operation(string, int);
 	virtual ~Operation() = default;
 	virtual SqrMatrix calc(int) { return SqrMatrix{}; }; 
+	virtual SqrMatrix calc(std::vector<SqrMatrix>) { return SqrMatrix{}; }
 	virtual SqrMatrix calcFromMatrix(SqrMatrix) { return SqrMatrix{}; };
 	virtual int getMatrixRequired() const { return m_matrixRequired; }; // return the number of matrix required for the operation (virtual).
 

@@ -13,6 +13,12 @@ SqrMatrix Scal::calc(int size)
 	cin >> matrix;
 	return matrix.scalar(m_scale);
 }
+//----------------------------------------------------
+SqrMatrix Scal::calc(std::vector<SqrMatrix> op)
+{
+	return op.at(0).scalar(m_scale);
+}
+//----------------------------------------------------
 SqrMatrix Scal::calcFromMatrix(SqrMatrix matrix)
 {
 	return matrix.scalar(m_scale);

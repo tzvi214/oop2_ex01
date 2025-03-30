@@ -11,6 +11,7 @@ public:
 	Transpose();
 	 ~Transpose() = default; // Make destructor virtual
 	virtual SqrMatrix calc(int);
+	virtual SqrMatrix calc(std::vector<SqrMatrix>);
 	virtual SqrMatrix calcFromMatrix(SqrMatrix);
 private:
 	
