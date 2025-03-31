@@ -13,5 +13,6 @@ public:
 	Eval();
 	~Eval() = default;
 	void calculate(std::shared_ptr<Operation>, int);
-	
+private:
+	std::vector<SqrMatrix> inputMatrices(std::shared_ptr<Operation>, int) const;
 };
