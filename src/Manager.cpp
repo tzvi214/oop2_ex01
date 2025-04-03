@@ -1,8 +1,4 @@
 #include "Manager.h"
-#include "Manager.h"
-#include "Manager.h"
-#include "Manager.h"
-#include "Manager.h"
 
 Manager::Manager() {
 	m_operations.push_back(std::make_shared<Id>());
@@ -28,12 +24,30 @@ void Manager::showMenu()
 		cout << i << ". " << m_operations[i]->getName() << endl;
 	}
 	cout << "Enter command ('help' for the list of available commands) : ";
+}
+#include <filesystem>
+#include <iostream>
 
+void Manager::showHelp() const
+{
+    std::ifstream file("help.txt");
+
+    if (!file) {
+        cerr << "Error opening help.txt from:" << std::filesystem::current_path().string() << "\n";
+        return;
+    }
+    std::string line;
+    while (std::getline(file, line)) {
+        cout << line << endl;
+    }
 }
 //-------------------------------------------
 void Manager::readCommand(std::string& command, int& num1, int& num2)
 {
-	cin >> command >> num1;
+	cin >> command;
+	if (command != "exit" && command != "help")	// if its exit or help, no need to read num1
+		cin >> num1;
+
 	if (std::cin.peek() != '\n')  // check if there is a second number
 		std::cin >> num2;
 }
@@ -62,6 +76,9 @@ void Manager::processCommand(std::string& command, int& num1, int& num2)
 	 }
 	 else if (command == "del") {
 		 m_operations.erase(m_operations.begin() + num1);
+	 }
+	 else if (command == "help") {
+		 showHelp();
 	 }
 	 else 
 		 cout << "Unknown command\n";

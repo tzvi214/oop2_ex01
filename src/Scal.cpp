@@ -3,24 +3,9 @@
 Scal::Scal(int scale)
 	:Operation((std::string{"Scal " + std::to_string(scale)}), 1), m_scale{scale}
 {}
-//----------------------------------------------------
-SqrMatrix Scal::calc(int size)
-{
-	Operation::printName();
-	cout << "Enter a " << size << " x " << size << " matrix:" << endl;
-	SqrMatrix matrix(size);
 
-	cin >> matrix;
-	return matrix.scalar(m_scale);
-}
 //----------------------------------------------------
 SqrMatrix Scal::calc(std::vector<SqrMatrix> op)
 {
 	return op.at(0).scalar(m_scale);
 }
-//----------------------------------------------------
-SqrMatrix Scal::calcFromMatrix(SqrMatrix matrix)
-{
-	return matrix.scalar(m_scale);
-}
-//----------------------------------------------------

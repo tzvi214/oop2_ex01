@@ -5,6 +5,7 @@
 #include <memory>
 #include <iostream>
 
+
 using std::cout;
 using std::endl;
 
@@ -12,8 +13,7 @@ class Add : public Operation
 {
 public:
 	Add(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
-	virtual SqrMatrix calc(int);
-	virtual SqrMatrix calc(std::vector<SqrMatrix>);
+	virtual SqrMatrix calc(std::vector<SqrMatrix>) override;
 
 private:
 	std::shared_ptr<Operation> m_ptr1;

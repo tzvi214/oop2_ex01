@@ -12,8 +12,7 @@ class Sub : public Operation
 {
 public:
 	Sub(std::shared_ptr<Operation>, std::shared_ptr<Operation>);
-	virtual SqrMatrix calc(int);
-	virtual SqrMatrix calc(std::vector<SqrMatrix>);
+	virtual SqrMatrix calc(std::vector<SqrMatrix>)override;
 private:
 	std::shared_ptr<Operation> m_ptr1;
 	std::shared_ptr<Operation> m_ptr2;

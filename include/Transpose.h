@@ -9,10 +9,8 @@ class Transpose : public Operation
 {
 public:
 	Transpose();
-	 ~Transpose() = default; // Make destructor virtual
-	virtual SqrMatrix calc(int);
-	virtual SqrMatrix calc(std::vector<SqrMatrix>);
-	virtual SqrMatrix calcFromMatrix(SqrMatrix);
+	 ~Transpose() = default; 
+	virtual SqrMatrix calc(std::vector<SqrMatrix>)override;
 private:
 	
 };

@@ -4,6 +4,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "Transpose.h"
 #include "Scal.h"
@@ -20,6 +21,7 @@
 //----------------------
 using std::cout;
 using std::endl;
+using std::cerr;
 
 
 
@@ -31,6 +33,7 @@ public:
 private:
 	std::vector<std::shared_ptr<Operation>> m_operations;
 	void showMenu();
+	void showHelp() const;
 	void readCommand(std::string& command, int& num1, int& num2);
 	void processCommand(std::string& command, int& num1, int& num2);
 	bool m_need2exitFromLoop = false;

@@ -11,9 +11,7 @@ class Scal :public Operation
 public:
 	Scal(int);
 	virtual ~Scal() = default;
-	virtual SqrMatrix calc(int );
-	virtual SqrMatrix calc(std::vector<SqrMatrix>);
-	virtual SqrMatrix calcFromMatrix(SqrMatrix);
+	virtual SqrMatrix calc(std::vector<SqrMatrix>)override;
 private:
 	int m_scale;
 };

@@ -15,4 +15,7 @@ endif()
 add_subdirectory (include)
 add_subdirectory (src)
 
+
+configure_file(${CMAKE_SOURCE_DIR}/help.txt ${CMAKE_BINARY_DIR}/help.txt COPYONLY)
+
 include (cmake/Zip.cmake)
