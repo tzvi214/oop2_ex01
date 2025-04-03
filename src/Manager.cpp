@@ -25,8 +25,6 @@ void Manager::showMenu()
 	}
 	cout << "Enter command ('help' for the list of available commands) : ";
 }
-#include <filesystem>
-#include <iostream>
 
 void Manager::showHelp() const
 {

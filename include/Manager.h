@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <filesystem>
+
 
 #include "Transpose.h"
 #include "Scal.h"
